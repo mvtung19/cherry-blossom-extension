@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Cherry blossom",
+    "version": "1.0",
+    "description": "Automatically add falling cherry blossoms to the website.",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"], 
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+          "resources": ["images/*"],
+          "matches": ["<all_urls>"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
